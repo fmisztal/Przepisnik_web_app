@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Przepiśnik</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+  <script type="module" defer src="homepage.js"></script>
+  <script type="module" defer src="zalogowany.js"></script>
+</head>
+<body>
+  <div class = "maincontainer">
+
+    <div class = "header">
+
+      <a href="homepage.html">
+        <div class="title">
+          <h1 class = "titletext"> Przepiśnik </h1>
+        </div>
+      </a>
+
+      <div class="menu">
+        <form action="/search" class="search w-form" method="post" id="searchForm">
+          <img src="img/search.png" height = "25" alt="" class="imSearch light">
+          <img src="img/search-dark.png" height = "25" alt="" class="imSearch dark">
+          <input type="search" class = "searchinput w-input" maxlength="256" placeholder="Wyszukaj przepis..." id="search" required="">
+        </form>
+        <a href="wyszukaj.html" class="menubutton w-button">Wyszukiwanie zaawansowane</a>
+        <a href="przepisnik.html" class="menubutton w-button">Mój przepiśnik</a>
+        <a href="dodaj-przepis.html" class="menubutton w-button">Dodaj przepis</a>
+        <button class="menubutton w-button register-open" id="wyloguj">Wyloguj</button>
+        <button class="menubutton mode w-button" id="mode-toggle">
+          <img src="img/mode.png" height = "25" alt="" class="imSearch light">
+          <img src="img/mode-dark.png" height = "25" alt="" class="imSearch dark">
+        </button>
+      </div>
+    </div>
+
+    <div class="mainpage" id="mainpage">
+      <label>
+        <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+        <div class="alert info">
+          <span class="alertClose">X</span>
+          <span class="alertText">Przepis został dodany pomyślnie!
+        <br class="clear"/></span>
+        </div>
+      </label>
+      <div id="searchResult">
+
+      </div>
+    </div>
+
+    <footer>
+        Autorzy:
+    <div class="authors">
+      <div class="column">
+        Agnieszka Gutowska <br>
+        Filip Misztal
+      </div>
+      <div class="column">
+        Grzegorz Molak <br>
+        Zuzanna Popławska
+      </div>
+      <div class="column">
+        Anna Szymańska <br>
+        Dorota Wlazło
+      </div>
+    </div>
+    <p><br>© 2023 Przepiśnik. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+  </div>
+</body>
+</html>
+
+

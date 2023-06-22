@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Przepiśnik</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" defer src="wyszukaj.js"></script>
+  <script type="module" defer src="zalogowany.js"></script>
+</head>
+<body>
+<div class = "maincontainer">
+
+  <div class = "header">
+
+    <a href="homepage.html">
+      <div class="title">
+        <h1 class = "titletext"> Przepiśnik </h1>
+      </div>
+    </a>
+
+    <div class="menu">
+      <form action="/search" class="search w-form" method="post" id="searchForm">
+          <img src="img/search.png" height = "25" alt="" class="imSearch light">
+          <img src="img/search-dark.png" height = "25" alt="" class="imSearch dark">
+          <input type="search" class = "searchinput w-input" maxlength="256" placeholder="Wyszukaj przepis..." id="search" required="">
+        </form>
+      <a href="wyszukaj.html" class="menubutton w-button">Wyszukiwanie zaawansowane</a>
+      <a href="przepisnik.html" class="menubutton w-button">Mój przepiśnik</a>
+      <a href="dodaj-przepis.html" class="menubutton w-button">Dodaj przepis</a>
+      <button class="menubutton w-button register-open" id="wyloguj">Wyloguj</button>
+      <button class="menubutton mode w-button" id="mode-toggle">
+          <img src="img/mode.png" height = "25" alt="" class="imSearch light">
+          <img src="img/mode-dark.png" height = "25" alt="" class="imSearch dark">
+        </button>
+    </div>
+  </div>
+
+  <div class="mainpage" id="mainpage">
+    <label>
+      <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+      <div class="alert info">
+        <span class="alertClose">X</span>
+        <span class="alertText">Przepis został dodany pomyślnie!
+        <br class="clear"/></span>
+      </div>
+    </label>
+    <h3 class="subtitle"> ~ Wyszukaj przepis ~ </h3>
+    <form class="recipe w-form" action="/search" id="long-search-form">
+      <fieldset class="formblock">
+        Przeszukaj <br>
+        <input type="radio" class="radio" id="all" name="whose" value="all" checked="checked">
+        <label for="all">Przepisy innych użytkowników</label><br>
+        <input type="radio" class="radio" id="own" name="whose" value="own">
+        <label for="own">Mój przepiśnik</label><br>
+      </fieldset>
+      <fieldset class="formblock">
+        Nazwa <br>
+        <input type="text" class = "nameinput2 w-input" maxlength="256" id="r-name" required = "" placeholder="Wprowadź interesującą Cię frazę">
+        </fieldset>
+      <fieldset class="formblock">
+        Wybierz tagi
+        <div class="tagcontainer">
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="wegetariańskie"><span><img src="img/wegetariańskie.png" alt = "" height="40">
+            <br> Wegetariańskie</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="wegańske"><span><img src="img/wegańskie.png" alt = "" height="40">
+            <br> Wegańskie</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="łagodne"><span><img src="img/łagodne.png" alt = "" height="40">
+            <br> Łagodne</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="pikantne"><span><img src="img/pikantne.png" alt = "" height="40">
+            <br> Pikantne</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="ostre"><span><img src="img/ostre.png" alt = "" height="40">
+            <br> Ostre</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="bez glutenu"><span><img src="img/bez glutenu.png" alt = "" height="40">
+            <br> Bez glutenu</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="bez laktozy"><span><img src="img/bez laktozy.png" alt = "" height="40">
+            <br> Bez laktozy</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="śniadanie"><span><img src="img/śniadanie.png" alt = "" height="40">
+            <br> Śniadanie</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="obiad"><span><img src="img/obiad.png" alt = "" height="40">
+            <br> Obiad</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="kolacja"><span><img src="img/kolacja.png" alt = "" height="40">
+            <br> Kolacja</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="deser"><span><img src="img/deser.png" alt = "" height="40">
+            <br> Deser</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="przekąska"><span><img src="img/przekąska.png" alt = "" height="40">
+            <br> Przekąska</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="zupa"><span><img src="img/zupa.png" alt = "" height="40">
+            <br> Zupa</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="włoskie"><span><img src="img/włoskie.png" alt = "" height="40">
+            <br> Włoskie</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="azjatyckie"><span><img src="img/azjatyckie.png" alt = "" height="40">
+            <br> Azjatyckie</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="polskie"><span><img src="img/polskie.png" alt = "" height="40">
+            <br> Polskie</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="amerykańskie"><span><img src="img/amerykańskie.png" alt = "" height="40">
+            <br> Amerykańskie</span>
+            </label>
+          </div>
+          <div class="tagbutton">
+            <label>
+              <input type="checkbox" value="meksykańskie"><span><img src="img/meksykańskie.png" alt = "" height="40">
+            <br> Meksykańskie</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="submitset">
+        <input type="button" class="submitbutton" id="submitbutton" value="Wyszukaj">
+      </fieldset>
+
+    </form>
+  </div>
+  <div id="searchResult">
+
+  </div>
+  <footer>
+        Autorzy:
+    <div class="authors">
+      <div class="column">
+        Agnieszka Gutowska <br>
+        Filip Misztal
+      </div>
+      <div class="column">
+        Grzegorz Molak <br>
+        Zuzanna Popławska
+      </div>
+      <div class="column">
+        Anna Szymańska <br>
+        Dorota Wlazło
+      </div>
+    </div>
+    <p><br>© 2023 Przepiśnik. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Przepiśnik</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+  <script type="module" defer src="przepisnik.js"></script>
+  <script type="module" defer src="zalogowany.js"></script>
+</head>
+<body>
+  <div class = "maincontainer">
+
+    <div class = "header">
+
+      <a href="homepage.html">
+        <div class="title">
+          <h1 class = "titletext"> Przepiśnik </h1>
+        </div>
+      </a>
+
+      <div class="menu">
+        <form action="/search" class="search w-form" method="get" id="searchForm">
+          <img src="img/search.png" height = "25" alt="" class="imSearch light">
+          <img src="img/search-dark.png" height = "25" alt="" class="imSearch dark">
+          <input type="search" class = "searchinput w-input" maxlength="256" placeholder="Wyszukaj przepis..." id="search" required="">
+        </form>
+        <a href="wyszukaj.html" class="menubutton w-button">Wyszukiwanie zaawansowane</a>
+        <a href="przepisnik.html" class="menubutton w-button">Mój przepiśnik</a>
+        <a href="dodaj-przepis.html" class="menubutton w-button">Dodaj przepis</a>
+        <button class="menubutton w-button register-open" id="wyloguj">Wyloguj</button>
+        <button class="menubutton mode w-button" id="mode-toggle">
+          <img src="img/mode.png" height = "25" alt="" class="imSearch light">
+          <img src="img/mode-dark.png" height = "25" alt="" class="imSearch dark">
+        </button>
+      </div>
+    </div>
+
+    <div class="mainpage">
+      <div class="form-popup" id="new-name">
+        <button type="button" class="close-btn" id="edit-close">&times;</button>
+        <div class="formContainer" >
+          <div class="form-element">
+            <label for="new-folder-name">Wpisz nazwę nowego folderu:</label>
+            <input type="text" placeholder="nazwa" id="new-folder-name">
+          </div>
+          <div class ="form-element">
+            <button type="button" class="register-btn" id="name-confirm">Zatwierdź</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-popup" id="confirm">
+        <button type="button" class="close-btn" id="delete-close">&times;</button>
+        <form class="formContainer" id="form">
+          <div class="form-element">
+            <label>Czy na pewno chcesz to usunąć?</label>
+          </div>
+          <div class ="form-button-element">
+            <button type="button" class="choice-btn" id="yes-button">Tak</button>
+            <button type="button" class="choice-btn" id="no-button">Nie</button>
+          </div>
+        </form>
+      </div>
+      <label>
+        <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+        <div class="alert info">
+          <span class="alertClose">X</span>
+          <span class="alertText">Przepis został dodany pomyślnie!
+        <br class="clear"/></span>
+        </div>
+      </label>
+      <h3 class="subtitle"> ~ Mój przepiśnik ~ </h3>
+      <div class="book">
+        <div class="tabs" id="tabs">
+        </div>
+        <div class="folder-content" id="folder-content">
+          <div class="actions">
+            <button type="button" class="actionbutton w-button deletebutton" id="deleteFolder">
+              <img src="img/delete.png" height="25" alt="" class="photo light" title="Usuń folder">
+              <img src="img/delete-dark.png" height="25" alt="" class="photo dark" title="Usuń folder"></button>
+          </div>
+          <h3 class="folder-name" id="folder-name"></h3>
+          <div id="folder-content-recipes">
+
+          </div>
+        </div>
+      </div>
+      <div id="searchResult">
+
+      </div>
+      <footer>
+      Autorzy:
+      <div class="authors">
+        <div class="column">
+          Agnieszka Gutowska <br>
+          Filip Misztal
+        </div>
+        <div class="column">
+          Grzegorz Molak <br>
+          Zuzanna Popławska
+        </div>
+        <div class="column">
+          Anna Szymańska <br>
+          Dorota Wlazło
+        </div>
+      </div>
+      <p><br>© 2023 Przepiśnik. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    </div>
+  </div>
+
+</body>
+</html>
